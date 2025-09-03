@@ -9,8 +9,17 @@ from pydantic import BaseModel
 
 from rag_core import CompanyIndex, make_prompt, simple_answer
 from settings import STORE_ROOT, TOP_K
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="CSV → Chatbot Maker", version="0.1.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class ChatRequest(BaseModel):
     company: str
