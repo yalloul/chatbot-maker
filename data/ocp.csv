@@ -1,0 +1,201 @@
+﻿Date Livraison;Source;Destination;Produit;Quantité (T);Transporteur;Statut;Durée (h)
+2025-01-01;Youssoufia;Safi;Phosphate A;286;TaqaLog;Livrée à l’heure;5,3
+2025-01-02;Benguerir;Laâyoune;Phosphate A;184;LogiPlus;Retardée;5,6
+2025-01-03;Benguerir;Jorf;Phosphate C;177;LogiPlus;Retardée;6,2
+2025-01-04;Khouribga;El Jadida;Phosphate B;206;TaqaLog;Livrée à l’heure;4,3
+2025-01-05;Youssoufia;Jorf;Phosphate A;199;LogiPlus;Livrée à l’heure;6,7
+2025-01-06;Youssoufia;Laâyoune;Phosphate A;291;LogiPlus;Livrée à l’heure;4,9
+2025-01-07;Khouribga;Laâyoune;Phosphate D;299;TaqaLog;Retardée;3,6
+2025-01-08;Youssoufia;Jorf;Phosphate D;249;LogiPlus;Livrée à l’heure;6,4
+2025-01-09;Benguerir;Laâyoune;Phosphate A;354;TaqaLog;Retardée;5
+2025-01-10;Youssoufia;Jorf;Phosphate D;290;TransOCP;Retardée;6
+2025-01-11;Khouribga;El Jadida;Phosphate B;390;TransOCP;Livrée à l’heure;5,9
+2025-01-12;Khouribga;El Jadida;Phosphate B;332;TaqaLog;Livrée à l’heure;6,6
+2025-01-13;Khouribga;Jorf;Phosphate A;305;TaqaLog;Livrée à l’heure;6,7
+2025-01-14;Khouribga;Safi;Phosphate D;389;TransOCP;Livrée à l’heure;5,6
+2025-01-15;Khouribga;El Jadida;Phosphate C;382;AfricaMove;Retardée;4,8
+2025-01-16;Youssoufia;Jorf;Phosphate C;253;AfricaMove;Livrée à l’heure;4,2
+2025-01-17;Benguerir;El Jadida;Phosphate A;385;AfricaMove;Retardée;5
+2025-01-18;Youssoufia;Laâyoune;Phosphate C;156;TransOCP;Livrée à l’heure;6,7
+2025-01-19;Khouribga;Laâyoune;Phosphate A;254;TaqaLog;Livrée à l’heure;5,4
+2025-01-20;Khouribga;Jorf;Phosphate A;306;TransOCP;Livrée à l’heure;6,6
+2025-01-21;Khouribga;Laâyoune;Phosphate C;236;TaqaLog;Retardée;3,5
+2025-01-22;Benguerir;El Jadida;Phosphate B;335;TaqaLog;Livrée à l’heure;6,2
+2025-01-23;Youssoufia;El Jadida;Phosphate D;360;LogiPlus;Livrée à l’heure;4,7
+2025-01-24;Youssoufia;El Jadida;Phosphate A;360;TaqaLog;Livrée à l’heure;6,8
+2025-01-25;Khouribga;Safi;Phosphate B;256;TransOCP;Livrée à l’heure;4,9
+2025-01-26;Khouribga;Safi;Phosphate A;198;LogiPlus;Retardée;6,8
+2025-01-27;Youssoufia;Laâyoune;Phosphate B;231;TransOCP;Livrée à l’heure;4,2
+2025-01-28;Youssoufia;Laâyoune;Phosphate B;157;LogiPlus;Livrée à l’heure;3,7
+2025-01-29;Khouribga;Safi;Phosphate C;304;TaqaLog;Livrée à l’heure;5,5
+2025-01-30;Youssoufia;Jorf;Phosphate D;265;AfricaMove;Retardée;6,8
+2025-01-31;Benguerir;Laâyoune;Phosphate B;220;TaqaLog;Annulée;3,7
+2025-02-01;Khouribga;Laâyoune;Phosphate D;387;TransOCP;Retardée;4,3
+2025-02-02;Khouribga;Safi;Phosphate C;225;LogiPlus;Livrée à l’heure;5,9
+2025-02-03;Khouribga;Laâyoune;Phosphate A;400;TaqaLog;Livrée à l’heure;4,3
+2025-02-04;Youssoufia;Jorf;Phosphate C;240;LogiPlus;Annulée;5,9
+2025-02-05;Khouribga;Safi;Phosphate D;325;LogiPlus;Livrée à l’heure;6
+2025-02-06;Youssoufia;Jorf;Phosphate D;284;LogiPlus;Retardée;6,2
+2025-02-07;Khouribga;Laâyoune;Phosphate C;247;TransOCP;Livrée à l’heure;6,6
+2025-02-08;Youssoufia;Laâyoune;Phosphate A;321;TransOCP;Livrée à l’heure;4,5
+2025-02-09;Benguerir;Jorf;Phosphate C;296;TaqaLog;Livrée à l’heure;6,3
+2025-02-10;Benguerir;Jorf;Phosphate C;175;TransOCP;Livrée à l’heure;4,5
+2025-02-11;Benguerir;Jorf;Phosphate C;287;TaqaLog;Livrée à l’heure;5,5
+2025-02-12;Benguerir;El Jadida;Phosphate A;241;LogiPlus;Retardée;5,7
+2025-02-13;Youssoufia;Jorf;Phosphate A;177;TransOCP;Livrée à l’heure;5,8
+2025-02-14;Youssoufia;Safi;Phosphate C;349;LogiPlus;Livrée à l’heure;5,5
+2025-02-15;Khouribga;Laâyoune;Phosphate A;277;LogiPlus;Retardée;5,5
+2025-02-16;Khouribga;El Jadida;Phosphate C;160;TaqaLog;Retardée;4,2
+2025-02-17;Khouribga;Jorf;Phosphate C;174;TaqaLog;Livrée à l’heure;5,7
+2025-02-18;Youssoufia;Jorf;Phosphate B;187;TransOCP;Livrée à l’heure;5,4
+2025-02-19;Benguerir;Jorf;Phosphate A;369;LogiPlus;Livrée à l’heure;4,1
+2025-02-20;Youssoufia;Safi;Phosphate B;182;TaqaLog;Annulée;4,2
+2025-02-21;Khouribga;Safi;Phosphate D;231;AfricaMove;Retardée;4,2
+2025-02-22;Khouribga;El Jadida;Phosphate C;291;LogiPlus;Livrée à l’heure;4,9
+2025-02-23;Khouribga;El Jadida;Phosphate B;240;TransOCP;Retardée;6,4
+2025-02-24;Khouribga;El Jadida;Phosphate A;289;TaqaLog;Livrée à l’heure;3,5
+2025-02-25;Youssoufia;Safi;Phosphate D;358;LogiPlus;Retardée;3,5
+2025-02-26;Khouribga;Safi;Phosphate A;211;TransOCP;Livrée à l’heure;4,5
+2025-02-27;Youssoufia;El Jadida;Phosphate C;266;TaqaLog;Livrée à l’heure;5,8
+2025-02-28;Benguerir;Jorf;Phosphate B;329;TaqaLog;Retardée;4
+2025-03-01;Khouribga;Jorf;Phosphate A;289;TaqaLog;Annulée;3,7
+2025-03-02;Benguerir;Jorf;Phosphate B;381;AfricaMove;Livrée à l’heure;6,1
+2025-03-03;Benguerir;El Jadida;Phosphate D;198;AfricaMove;Livrée à l’heure;6,8
+2025-03-04;Benguerir;Laâyoune;Phosphate D;204;TransOCP;Livrée à l’heure;4,1
+2025-03-05;Youssoufia;Safi;Phosphate D;390;TransOCP;Retardée;6,5
+2025-03-06;Benguerir;Laâyoune;Phosphate D;169;LogiPlus;Retardée;6,5
+2025-03-07;Youssoufia;El Jadida;Phosphate C;227;LogiPlus;Livrée à l’heure;4,6
+2025-03-08;Benguerir;El Jadida;Phosphate A;246;TransOCP;Livrée à l’heure;3,6
+2025-03-09;Khouribga;Laâyoune;Phosphate A;367;AfricaMove;Retardée;3,7
+2025-03-10;Youssoufia;El Jadida;Phosphate D;280;TransOCP;Livrée à l’heure;6,2
+2025-03-11;Youssoufia;Safi;Phosphate D;251;TransOCP;Livrée à l’heure;3,8
+2025-03-12;Khouribga;Safi;Phosphate A;254;TaqaLog;Retardée;6,6
+2025-03-13;Khouribga;Jorf;Phosphate A;298;AfricaMove;Livrée à l’heure;4,4
+2025-03-14;Benguerir;Safi;Phosphate A;272;LogiPlus;Retardée;4,6
+2025-03-15;Khouribga;Safi;Phosphate C;388;AfricaMove;Livrée à l’heure;4,4
+2025-03-16;Khouribga;Safi;Phosphate A;287;TaqaLog;Livrée à l’heure;4,7
+2025-03-17;Youssoufia;El Jadida;Phosphate B;289;TransOCP;Livrée à l’heure;5,6
+2025-03-18;Khouribga;Jorf;Phosphate D;241;LogiPlus;Livrée à l’heure;5,1
+2025-03-19;Benguerir;El Jadida;Phosphate C;195;LogiPlus;Retardée;3,5
+2025-03-20;Benguerir;El Jadida;Phosphate B;295;TaqaLog;Livrée à l’heure;6
+2025-03-21;Youssoufia;Safi;Phosphate C;378;TaqaLog;Livrée à l’heure;4,7
+2025-03-22;Youssoufia;Safi;Phosphate A;173;TaqaLog;Retardée;6,2
+2025-03-23;Benguerir;Laâyoune;Phosphate C;259;AfricaMove;Livrée à l’heure;5,4
+2025-03-24;Benguerir;Safi;Phosphate A;348;TaqaLog;Livrée à l’heure;4,4
+2025-03-25;Khouribga;El Jadida;Phosphate A;188;TaqaLog;Retardée;3,9
+2025-03-26;Khouribga;Laâyoune;Phosphate B;155;TransOCP;Livrée à l’heure;5,7
+2025-03-27;Khouribga;Laâyoune;Phosphate B;286;TaqaLog;Retardée;6,1
+2025-03-28;Benguerir;Safi;Phosphate B;320;TaqaLog;Livrée à l’heure;3,6
+2025-03-29;Youssoufia;El Jadida;Phosphate C;354;TaqaLog;Livrée à l’heure;4,8
+2025-03-30;Youssoufia;Jorf;Phosphate D;384;TaqaLog;Livrée à l’heure;4,4
+2025-03-31;Khouribga;Safi;Phosphate A;330;TransOCP;Livrée à l’heure;6,6
+2025-04-01;Benguerir;Safi;Phosphate B;213;TaqaLog;Retardée;5,2
+2025-04-02;Youssoufia;El Jadida;Phosphate C;398;TransOCP;Livrée à l’heure;6,2
+2025-04-03;Benguerir;El Jadida;Phosphate B;166;LogiPlus;Livrée à l’heure;4,3
+2025-04-04;Benguerir;Laâyoune;Phosphate B;260;TransOCP;Livrée à l’heure;4,2
+2025-04-05;Youssoufia;Laâyoune;Phosphate C;231;TaqaLog;Livrée à l’heure;6,7
+2025-04-06;Khouribga;Safi;Phosphate D;162;AfricaMove;Livrée à l’heure;5,5
+2025-04-07;Youssoufia;Laâyoune;Phosphate B;269;LogiPlus;Livrée à l’heure;6,1
+2025-04-08;Youssoufia;Safi;Phosphate B;374;TaqaLog;Annulée;5,1
+2025-04-09;Youssoufia;Safi;Phosphate A;229;AfricaMove;Livrée à l’heure;5,8
+2025-04-10;Khouribga;El Jadida;Phosphate B;208;TaqaLog;Livrée à l’heure;6,4
+2025-07-01 00:00:00;Khouribga;Benguerir;Phosphate A;1924,19;Express Maroc;Retardée;3
+2025-07-02 00:00:00;Benguerir;Jorf Lasfar;MAP Fertilizer;4706,65;Transport Maghreb;Livrée à l’heure;2,53
+2025-07-03 00:00:00;Youssoufia;Jorf Lasfar;Phosphate A;4870,95;Express Maroc;En attente;11,59
+2025-07-04 00:00:00;Benguerir;Jorf Lasfar;Phosphoric Acid;1491,21;Express Maroc;En attente;10,47
+2025-07-05 00:00:00;Benguerir;Jorf Lasfar;Phosphate A;1596,28;Logistique Atlas;En attente;5,55
+2025-07-06 00:00:00;Safi;Khouribga;Phosphate B;2479,51;Cargo Plus;Annulée;11,57
+2025-07-07 00:00:00;Youssoufia;Youssoufia;MAP Fertilizer;2297,28;Transport Maghreb;En attente;8,77
+2025-07-08 00:00:00;Youssoufia;Youssoufia;MAP Fertilizer;4972,84;Logistique Atlas;En attente;6,83
+2025-07-09 00:00:00;Youssoufia;Jorf Lasfar;Phosphoric Acid;962,03;Logistique Atlas;En attente;6,93
+2025-07-10 00:00:00;Benguerir;Youssoufia;Phosphate B;188,57;Transport Maghreb;Retardée;2,83
+2025-07-11 00:00:00;Khouribga;Youssoufia;Phosphate C;2520,08;Express Maroc;Annulée;2,92
+2025-07-12 00:00:00;Youssoufia;Jorf Lasfar;Phosphate A;976,23;Logistique Atlas;En attente;8,02
+2025-07-13 00:00:00;El Jadida;Youssoufia;TSP Fertilizer;1895,7;Express Maroc;Livrée à l’heure;7,54
+2025-07-14 00:00:00;Benguerir;Benguerir;Phosphate A;3746,44;Cargo Plus;Livrée à l’heure;4,13
+2025-07-15 00:00:00;Safi;Safi;Phosphate A;3632,61;Express Maroc;Livrée à l’heure;11,46
+2025-07-16 00:00:00;Khouribga;Safi;Phosphate C;1609,5;Cargo Plus;Annulée;9,81
+2025-07-17 00:00:00;El Jadida;Jorf Lasfar;Phosphate A;2758,45;Express Maroc;Annulée;3,13
+2025-07-18 00:00:00;El Jadida;Khouribga;Phosphate B;2593,19;Logistique Atlas;Livrée à l’heure;11,31
+2025-07-19 00:00:00;Safi;Jorf Lasfar;Phosphate B;3218,03;Logistique Atlas;En attente;11,74
+2025-07-20 00:00:00;Khouribga;Khouribga;MAP Fertilizer;1327,26;Cargo Plus;Annulée;11,96
+2025-07-21 00:00:00;Benguerir;Safi;Phosphoric Acid;2990,37;Transport Maghreb;Livrée à l’heure;2,56
+2025-07-22 00:00:00;Jorf Lasfar;Jorf Lasfar;TSP Fertilizer;4896,58;Cargo Plus;Livrée à l’heure;9,37
+2025-07-23 00:00:00;Khouribga;El Jadida;Phosphate A;2485,04;Cargo Plus;En attente;7,46
+2025-07-24 00:00:00;Safi;Benguerir;Phosphate A;4539,88;Express Maroc;Retardée;9,06
+2025-07-25 00:00:00;El Jadida;Youssoufia;Phosphate C;2228,53;Express Maroc;Annulée;11,69
+2025-07-26 00:00:00;Benguerir;Khouribga;Phosphoric Acid;1815,38;Cargo Plus;En attente;8,88
+2025-07-27 00:00:00;Khouribga;El Jadida;Phosphate B;3261,01;Logistique Atlas;Livrée à l’heure;10,37
+2025-07-28 00:00:00;Jorf Lasfar;Youssoufia;TSP Fertilizer;3377,73;Express Maroc;Livrée à l’heure;10,67
+2025-07-29 00:00:00;Jorf Lasfar;Youssoufia;MAP Fertilizer;4334,42;Transport Maghreb;En attente;10,38
+2025-07-30 00:00:00;Youssoufia;Jorf Lasfar;Phosphate B;1227,91;Express Maroc;Annulée;6,26
+2025-07-31 00:00:00;Youssoufia;Youssoufia;Phosphoric Acid;2546,05;Express Maroc;Retardée;4,23
+2025-08-01 00:00:00;Safi;Benguerir;MAP Fertilizer;2902,82;Transport Maghreb;Retardée;5,97
+2025-08-02 00:00:00;Khouribga;El Jadida;Phosphate C;3865,91;Cargo Plus;Livrée à l’heure;10,92
+2025-08-03 00:00:00;Khouribga;Youssoufia;Phosphate C;313,66;Transport Maghreb;Annulée;3,47
+2025-08-04 00:00:00;El Jadida;Jorf Lasfar;Phosphate A;4973,3;Cargo Plus;Retardée;7,13
+2025-08-05 00:00:00;El Jadida;Benguerir;Phosphoric Acid;2402,73;Cargo Plus;Annulée;4,33
+2025-08-06 00:00:00;El Jadida;Safi;TSP Fertilizer;1469,85;Cargo Plus;Annulée;7,81
+2025-08-07 00:00:00;Youssoufia;El Jadida;MAP Fertilizer;4429,12;Transport Maghreb;Livrée à l’heure;10,63
+2025-08-08 00:00:00;Khouribga;Youssoufia;Phosphate B;3763,82;Cargo Plus;Retardée;10,8
+2025-08-09 00:00:00;Khouribga;Jorf Lasfar;Phosphoric Acid;4770,05;Logistique Atlas;En attente;4,37
+2025-08-10 00:00:00;Jorf Lasfar;Safi;Phosphoric Acid;1720,68;Transport Maghreb;Livrée à l’heure;11,08
+2025-08-11 00:00:00;Youssoufia;Safi;Phosphate C;2808,55;Logistique Atlas;Retardée;7,92
+2025-08-12 00:00:00;Benguerir;Khouribga;Phosphate A;2904,23;Cargo Plus;Retardée;5,5
+2025-08-13 00:00:00;Youssoufia;Benguerir;Phosphate A;4903,62;Express Maroc;Retardée;9,08
+2025-08-14 00:00:00;Benguerir;Youssoufia;MAP Fertilizer;469,2;Cargo Plus;Retardée;6,82
+2025-08-15 00:00:00;Jorf Lasfar;Jorf Lasfar;Phosphate C;1597,92;Logistique Atlas;Retardée;5,78
+2025-08-16 00:00:00;Safi;Khouribga;Phosphoric Acid;1035,46;Logistique Atlas;Annulée;9,05
+2025-08-17 00:00:00;Khouribga;Benguerir;TSP Fertilizer;1415,53;Transport Maghreb;Livrée à l’heure;4,49
+2025-08-18 00:00:00;Jorf Lasfar;Khouribga;Phosphate C;2477,87;Express Maroc;Annulée;5,3
+2025-08-19 00:00:00;Khouribga;El Jadida;MAP Fertilizer;1926,17;Transport Maghreb;En attente;6,34
+2025-08-20 00:00:00;El Jadida;Benguerir;MAP Fertilizer;2033,99;Logistique Atlas;Retardée;4,54
+2025-08-21 00:00:00;Safi;Benguerir;Phosphate C;4236,64;Cargo Plus;Livrée à l’heure;6,05
+2025-08-22 00:00:00;Safi;Youssoufia;MAP Fertilizer;4657,08;Express Maroc;Retardée;7,71
+2025-08-23 00:00:00;Jorf Lasfar;Benguerir;Phosphate C;445,04;Cargo Plus;Livrée à l’heure;9,41
+2025-08-24 00:00:00;Safi;Khouribga;Phosphate B;1123,7;Cargo Plus;Annulée;9,67
+2025-08-25 00:00:00;Benguerir;Benguerir;Phosphate C;3388,6;Express Maroc;Livrée à l’heure;10,23
+2025-08-26 00:00:00;Safi;Youssoufia;Phosphate C;1857,37;Transport Maghreb;En attente;9,44
+2025-08-27 00:00:00;Khouribga;Youssoufia;MAP Fertilizer;1345,4;Cargo Plus;En attente;8,81
+2025-08-28 00:00:00;Khouribga;El Jadida;MAP Fertilizer;1546,92;Logistique Atlas;Livrée à l’heure;4,38
+2025-08-29 00:00:00;Khouribga;Khouribga;Phosphate A;1680,5;Cargo Plus;Livrée à l’heure;6
+2025-08-30 00:00:00;Khouribga;Safi;Phosphate A;4258,48;Express Maroc;Livrée à l’heure;6,78
+2025-08-31 00:00:00;Benguerir;Safi;Phosphate B;769,44;Express Maroc;Livrée à l’heure;2,83
+2025-09-01 00:00:00;Youssoufia;Benguerir;Phosphate A;3573,66;Express Maroc;En attente;7,28
+2025-09-02 00:00:00;El Jadida;El Jadida;Phosphate C;2808,82;Transport Maghreb;Retardée;6,36
+2025-09-03 00:00:00;Jorf Lasfar;Jorf Lasfar;MAP Fertilizer;1552,9;Cargo Plus;Livrée à l’heure;10,02
+2025-09-04 00:00:00;Khouribga;Benguerir;Phosphate A;2156,93;Transport Maghreb;Livrée à l’heure;11,78
+2025-09-05 00:00:00;Safi;El Jadida;Phosphate A;1355,41;Transport Maghreb;En attente;7,56
+2025-09-06 00:00:00;Khouribga;Khouribga;Phosphate B;3096,42;Express Maroc;En attente;5,23
+2025-09-07 00:00:00;Safi;Khouribga;Phosphoric Acid;499,81;Express Maroc;Annulée;2,43
+2025-09-08 00:00:00;El Jadida;Khouribga;Phosphate B;125,41;Transport Maghreb;Livrée à l’heure;11,25
+2025-09-09 00:00:00;El Jadida;Khouribga;Phosphate C;3176,68;Cargo Plus;Annulée;11,19
+2025-09-10 00:00:00;El Jadida;Khouribga;MAP Fertilizer;1051,94;Logistique Atlas;En attente;4,53
+2025-09-11 00:00:00;Safi;El Jadida;Phosphate B;447,61;Transport Maghreb;En attente;8,95
+2025-09-12 00:00:00;Khouribga;El Jadida;Phosphate A;2044,24;Cargo Plus;Retardée;2,75
+2025-09-13 00:00:00;El Jadida;Youssoufia;MAP Fertilizer;348,77;Express Maroc;Livrée à l’heure;3,66
+2025-09-14 00:00:00;Benguerir;Safi;MAP Fertilizer;4444,42;Express Maroc;Annulée;4,17
+2025-09-15 00:00:00;Safi;Khouribga;Phosphate A;235,32;Cargo Plus;En attente;4,94
+2025-09-16 00:00:00;Safi;Jorf Lasfar;Phosphate B;2936,44;Logistique Atlas;En attente;11,96
+2025-09-17 00:00:00;Khouribga;El Jadida;Phosphate A;2248,52;Express Maroc;Annulée;8,97
+2025-09-18 00:00:00;Safi;Jorf Lasfar;Phosphoric Acid;3392,93;Express Maroc;Retardée;5,84
+2025-09-19 00:00:00;Safi;Jorf Lasfar;MAP Fertilizer;1707,95;Express Maroc;En attente;9,37
+2025-09-20 00:00:00;El Jadida;Jorf Lasfar;TSP Fertilizer;859,7;Cargo Plus;Livrée à l’heure;11,15
+2025-09-21 00:00:00;Khouribga;Youssoufia;TSP Fertilizer;4911,02;Transport Maghreb;En attente;11,59
+2025-09-22 00:00:00;El Jadida;El Jadida;Phosphate C;4210,77;Express Maroc;Livrée à l’heure;2,58
+2025-09-23 00:00:00;El Jadida;Jorf Lasfar;Phosphate A;4315,98;Transport Maghreb;Annulée;5,95
+2025-09-24 00:00:00;Khouribga;Khouribga;Phosphate A;1326,23;Logistique Atlas;Livrée à l’heure;3,07
+2025-09-25 00:00:00;Jorf Lasfar;Benguerir;Phosphate C;290,29;Express Maroc;Annulée;5,36
+2025-09-26 00:00:00;El Jadida;Jorf Lasfar;Phosphate C;1586;Express Maroc;Livrée à l’heure;3,7
+2025-09-27 00:00:00;Benguerir;Youssoufia;Phosphate C;2731,7;Logistique Atlas;Annulée;8,47
+2025-09-28 00:00:00;Benguerir;El Jadida;MAP Fertilizer;1700,59;Express Maroc;Livrée à l’heure;5,88
+2025-09-29 00:00:00;Safi;Youssoufia;Phosphoric Acid;4156,56;Transport Maghreb;Retardée;4,29
+2025-09-30 00:00:00;Benguerir;Jorf Lasfar;Phosphate A;1430,56;Cargo Plus;Livrée à l’heure;4,66
+2025-10-01 00:00:00;Safi;El Jadida;MAP Fertilizer;4829,73;Transport Maghreb;Livrée à l’heure;5,6
+2025-10-02 00:00:00;Jorf Lasfar;Benguerir;Phosphate C;2340,6;Cargo Plus;Retardée;4,6
+2025-10-03 00:00:00;Khouribga;Jorf Lasfar;Phosphate A;4225,91;Cargo Plus;En attente;6,53
+2025-10-04 00:00:00;Khouribga;Youssoufia;MAP Fertilizer;1052,46;Transport Maghreb;En attente;2,32
+2025-10-05 00:00:00;Khouribga;Safi;Phosphoric Acid;2115,63;Transport Maghreb;Livrée à l’heure;4,8
+2025-10-06 00:00:00;Benguerir;Khouribga;MAP Fertilizer;3527,61;Transport Maghreb;Retardée;6,11
+2025-10-07 00:00:00;Jorf Lasfar;Youssoufia;Phosphoric Acid;777,93;Transport Maghreb;Livrée à l’heure;8,03
+2025-10-08 00:00:00;Benguerir;El Jadida;Phosphate C;750,45;Logistique Atlas;Annulée;4,71
