@@ -7,15 +7,17 @@ from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
-from rag_core import CompanyIndex, make_prompt, simple_answer
-from settings import STORE_ROOT, TOP_K
+from rag_core import CompanyIndex
+from settings import STORE_ROOT, TOP_K, MIN_TOP_SCORE, USE_MISTRAL
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(title="CSV → Chatbot Maker", version="0.1.0")
+from llm_mistral import mistral_available, judge_and_answer_with_mistral
+
+app = FastAPI(title="CSV → Chatbot Maker", version="0.1.1")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"], 
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -25,7 +27,7 @@ class ChatRequest(BaseModel):
     company: str
     query: str
     top_k: Optional[int] = TOP_K
-    
+
 
 @app.post("/v1/ingest")
 async def ingest(company: str = Form(...), file: UploadFile = File(...), reset: bool = Form(False)):
@@ -54,29 +56,45 @@ async def ingest(company: str = Form(...), file: UploadFile = File(...), reset: 
 
     return {"ok": True, "company": company, "records": len(df)}
 
+
 @app.post("/v1/chat")
 async def chat(req: ChatRequest):
     ix = CompanyIndex(req.company)
     results = ix.search(req.query, k=req.top_k or TOP_K)
 
-    # If you have an LLM, call it with `make_prompt(...)`.
-    # For MVP we do a simple extractive fusion:
-    # prompt = make_prompt(req.company, req.query, results)
-    # answer = call_llm(prompt)  # <- plug your LLM here
-    result = simple_answer(req.company, req.query, results)
+    # Guardrail: if nothing relevant enough, don't answer
+    if not results or float(results[0][0]) < MIN_TOP_SCORE:
+        answer = (
+            "I'm not capable of answering this question with the current knowledge. "
+            "Please provide more relevant documentation and try again."
+        )
+        return JSONResponse({
+            "company": req.company,
+            "query": req.query,
+            "top_k": req.top_k,
+            "answer": answer,
+            # Do NOT include citations or hits to avoid showing ranked snippets
+        })
+
+    # Require Mistral and return only its answer
+    if USE_MISTRAL and mistral_available():
+        can_answer, gen_answer = judge_and_answer_with_mistral(req.company, req.query, results)
+        if can_answer and gen_answer.strip():
+            answer = gen_answer
+        else:
+            answer = (
+                "I'm not capable of answering this question with the current knowledge. "
+                "Please provide more relevant documentation and try again."
+            )
+    else:
+        answer = (
+            "Mistral is not configured. Set MISTRAL_API_KEY and restart, or disable USE_MISTRAL."
+        )
 
     return JSONResponse({
         "company": req.company,
         "query": req.query,
         "top_k": req.top_k,
-        "answer": result["answer"],
-        "citations": result["citations"],
-        "hits": [
-            {
-                "score": float(score),
-                "data_type": r.data_type,
-                "title": r.title,
-                "keywords": r.keywords,
-            } for score, r in results
-        ]
+        "answer": answer,
+        # No citations, no hits in response
     })
