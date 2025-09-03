@@ -1,0 +1,23 @@
+{"id": "row-0", "app_name": "Instagram", "data_type": "description", "title": "Instagram Overview", "content": "Instagram is a social networking app focused on photo and video sharing.", "keywords": "overview, social, network"}
+{"id": "row-3", "app_name": "Instagram", "data_type": "faq", "title": "Why are my posts not showing?", "content": "Check internet, refresh feed, ensure account is not shadowbanned.", "keywords": "posts, not showing, issues"}
+{"id": "row-4", "app_name": "Instagram", "data_type": "tutorial", "title": "How to Post a Photo", "content": "Open the app, click +, choose photo, apply filter, share.", "keywords": "post, photo, share"}
+{"id": "row-5", "app_name": "Instagram", "data_type": "faq", "title": "How to recover a hacked account?", "content": "Use 'Forgot password', contact support if email changed.", "keywords": "hacked, recover, security"}
+{"id": "row-6", "app_name": "Instagram", "data_type": "tutorial", "title": "How to Use Stories", "content": "Tap your profile picture, add media, share story.", "keywords": "stories, share, photo, video"}
+{"id": "row-7", "app_name": "Instagram", "data_type": "feature", "title": "IGTV", "content": "Longer videos up to 60 minutes", "keywords": "igtv, long video, streaming"}
+{"id": "row-8", "app_name": "Instagram", "data_type": "faq", "title": "How to make account private?", "content": "Go to settings → privacy → toggle private account.", "keywords": "private, account, settings"}
+{"id": "row-9", "app_name": "Instagram", "data_type": "tutorial", "title": "How to Shop on Instagram", "content": "Browse tagged products, tap buy now, checkout.", "keywords": "shopping, buy, checkout"}
+{"id": "row-13", "app_name": "Instagram", "data_type": "tutorial", "title": "How to Create an Account", "content": "Step by step guide to sign up on Instagram", "keywords": "account, signup, create"}
+{"id": "row-14", "app_name": "Instagram", "data_type": "feature", "title": "Hashtags", "content": "Use hashtags to increase content reach", "keywords": "hashtags, search, tags"}
+{"id": "row-16", "app_name": "Instagram", "data_type": "description", "title": "Business Tools", "content": "Instagram provides analytics and promotion features for business accounts.", "keywords": "business, analytics, promotion"}
+{"id": "row-17", "app_name": "Instagram", "data_type": "feature", "title": "Ads", "content": "Businesses can run targeted ads", "keywords": "ads, business, targeting"}
+{"id": "row-18", "app_name": "Instagram", "data_type": "feature", "title": "Shopping", "content": "Sell and buy products directly in-app", "keywords": "shopping, ecommerce, buy, sell"}
+{"id": "row-20", "app_name": "Instagram", "data_type": "faq", "title": "Why can't I log in?", "content": "Make sure your username and password are correct, reset if forgotten.", "keywords": "login, password, issue"}
+{"id": "row-22", "app_name": "Instagram", "data_type": "feature", "title": "Live", "content": "Go live to interact with followers in real-time", "keywords": "live, stream, broadcast"}
+{"id": "row-29", "app_name": "Instagram", "data_type": "feature", "title": "Direct Messaging", "content": "Private messages with users and groups", "keywords": "dm, chat, private messaging"}
+{"id": "row-30", "app_name": "Instagram", "data_type": "tutorial", "title": "How to Go Live", "content": "Swipe right, choose Live, tap button to broadcast.", "keywords": "live, broadcast, followers"}
+{"id": "row-31", "app_name": "Instagram", "data_type": "description", "title": "Community Guidelines", "content": "Instagram enforces policies to keep users safe and respectful.", "keywords": "guidelines, rules, community"}
+{"id": "row-37", "app_name": "Instagram", "data_type": "faq", "title": "How do I verify my account?", "content": "Go to settings → account → request verification.", "keywords": "verify, blue tick, account"}
+{"id": "row-38", "app_name": "Instagram", "data_type": "feature", "title": "Reels", "content": "Short video clips with audio and effects", "keywords": "reels, short video, clips"}
+{"id": "row-46", "app_name": "Instagram", "data_type": "feature", "title": "Explore Tab", "content": "Discover trending content and accounts", "keywords": "explore, trending, discover"}
+{"id": "row-62", "app_name": "Instagram", "data_type": "feature", "title": "Stories", "content": "Create short-lived content that disappears after 24h", "keywords": "stories, ephemeral, content"}
+{"id": "row-68", "app_name": "Instagram", "data_type": "feature", "title": "Posting Photos", "content": "How to share photos with followers", "keywords": "post, share, photos, upload"}
