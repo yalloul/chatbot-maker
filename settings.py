@@ -16,7 +16,9 @@ OPENAI_MODEL = "gpt-4o-mini"
 OPENAI_API_KEY = ""  # set env var or put here if you must
 
 # Mistral LLM provider
-USE_MISTRAL = True
+MIN_TOP_SCORE = 0.50
+USE_MISTRAL = False
+USE_OLLAMA = True #(and read env for host/model)
 MISTRAL_MODEL = "mistral-small-latest"  # or "mistral-large-latest"
 MISTRAL_API_KEY = "4O4QYaX9oKCM0DBoXBpXgo3tEdTuPLAV"  # prefer env var MISTRAL_API_KEY
 

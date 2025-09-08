@@ -8,10 +8,18 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 from rag_core import CompanyIndex
-from settings import STORE_ROOT, TOP_K, MIN_TOP_SCORE, USE_MISTRAL
+from settings import TOP_K, MIN_TOP_SCORE, USE_MISTRAL, USE_OLLAMA
 from fastapi.middleware.cors import CORSMiddleware
 
-from llm_mistral import mistral_available, judge_and_answer_with_mistral
+# Optional Mistral support (won't break if not present)
+try:
+    from llm_mistral import mistral_available, judge_and_answer_with_mistral
+except Exception:
+    mistral_available = lambda: False  # noqa: E731
+    judge_and_answer_with_mistral = None  # type: ignore
+
+# Ollama (local) LLM support
+from llm_ollama import ollama_available, judge_and_answer_with_ollama
 
 app = FastAPI(title="CSV → Chatbot Maker", version="0.1.1")
 
@@ -27,6 +35,25 @@ class ChatRequest(BaseModel):
     company: str
     query: str
     top_k: Optional[int] = TOP_K
+
+
+def small_talk_reply(company: str, text: str) -> Optional[str]:
+    """
+    Lightweight small-talk handler to avoid sending greetings to retrieval/LLM.
+    """
+    t = (text or "").strip().lower()
+
+    greetings = ("hi", "hello", "hey", "yo", "hola", "salut", "bonjour")
+    thanks = ("thanks", "thank you", "thx", "merci", "gracias")
+    goodbyes = ("bye", "goodbye", "see you", "ciao")
+
+    if any(t.startswith(g) for g in greetings):
+        return f"Hello! I'm your assistant for {company}. How can I help you today?"
+    if any(t.startswith(x) for x in thanks):
+        return "You're welcome! How else can I help?"
+    if any(t.startswith(x) for x in goodbyes):
+        return "Goodbye! If you need anything else, just ask."
+    return None
 
 
 @app.post("/v1/ingest")
@@ -45,7 +72,7 @@ async def ingest(company: str = Form(...), file: UploadFile = File(...), reset: 
 
     # Validate quickly
     df = pd.read_csv(tmp_path)
-    expected = {"app_name","data_type","title","content","keywords"}
+    expected = {"app_name", "data_type", "title", "content", "keywords"}
     if not expected.issubset(set(map(str, df.columns))):
         raise HTTPException(400, f"CSV must contain columns: {', '.join(sorted(expected))}")
 
@@ -59,10 +86,21 @@ async def ingest(company: str = Form(...), file: UploadFile = File(...), reset: 
 
 @app.post("/v1/chat")
 async def chat(req: ChatRequest):
+    # 0) Small-talk fast path
+    st = small_talk_reply(req.company, req.query)
+    if st:
+        return JSONResponse({
+            "company": req.company,
+            "query": req.query,
+            "top_k": req.top_k,
+            "answer": st,
+        })
+
+    # 1) Retrieve
     ix = CompanyIndex(req.company)
     results = ix.search(req.query, k=req.top_k or TOP_K)
 
-    # Guardrail: if nothing relevant enough, don't answer
+    # 2) Guardrail: if nothing relevant enough, don't answer
     if not results or float(results[0][0]) < MIN_TOP_SCORE:
         answer = (
             "I'm not capable of answering this question with the current knowledge. "
@@ -76,9 +114,18 @@ async def chat(req: ChatRequest):
             # Do NOT include citations or hits to avoid showing ranked snippets
         })
 
-    # Require Mistral and return only its answer
+    # 3) Try different LLM options (Mistral first if configured, then Ollama)
     if USE_MISTRAL and mistral_available():
-        can_answer, gen_answer = judge_and_answer_with_mistral(req.company, req.query, results)
+        can_answer, gen_answer = judge_and_answer_with_mistral(req.company, req.query, results)  # type: ignore
+        if can_answer and gen_answer.strip():
+            answer = gen_answer
+        else:
+            answer = (
+                "I'm not capable of answering this question with the current knowledge. "
+                "Please provide more relevant documentation and try again."
+            )
+    elif USE_OLLAMA and ollama_available():
+        can_answer, gen_answer = judge_and_answer_with_ollama(req.company, req.query, results)
         if can_answer and gen_answer.strip():
             answer = gen_answer
         else:
@@ -88,7 +135,8 @@ async def chat(req: ChatRequest):
             )
     else:
         answer = (
-            "Mistral is not configured. Set MISTRAL_API_KEY and restart, or disable USE_MISTRAL."
+            "LLM is not configured. Start Ollama and set OLLAMA_BASE_URL/OLLAMA_MODEL, "
+            "or set MISTRAL_API_KEY and disable/enable USE_OLLAMA / USE_MISTRAL appropriately."
         )
 
     return JSONResponse({
