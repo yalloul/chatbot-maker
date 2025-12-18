@@ -1,4 +1,11 @@
 import os
+try:
+    from dotenv import load_dotenv
+    load_dotenv()  # Load variables from .env if present
+except Exception:
+    # dotenv optional; ignore if not installed
+    pass
+from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
@@ -9,6 +16,7 @@ from pydantic import BaseModel
 
 from rag_core import CompanyIndex
 from settings import TOP_K, MIN_TOP_SCORE, USE_MISTRAL, USE_OLLAMA
+from settings import MONGODB_URI, MONGODB_DB, MONGODB_PROMPTS_COLLECTION
 from fastapi.middleware.cors import CORSMiddleware
 
 # Optional Mistral support (won't break if not present)
@@ -35,6 +43,39 @@ class ChatRequest(BaseModel):
     company: str
     query: str
     top_k: Optional[int] = TOP_K
+@app.on_event("startup")
+async def _startup_mongo():
+    """Initialize Mongo client (Motor) if URI is provided. Prefer env vars; validate with ping."""
+    # Prefer environment variables over settings to avoid committing secrets
+    uri = (os.environ.get("MONGODB_URI") or MONGODB_URI).strip() if (os.environ.get("MONGODB_URI") or MONGODB_URI) else ""
+    if not uri:
+        app.state.mongo = None
+        print("[mongo] MONGODB_URI not set; prompt logging disabled.")
+        return
+    try:
+        from motor.motor_asyncio import AsyncIOMotorClient  # lazy import
+        # small timeout to fail fast if Atlas not reachable
+        client = AsyncIOMotorClient(uri, serverSelectionTimeoutMS=3000)
+        # Ping admin to verify connectivity
+        await client.admin.command("ping")
+        db_name = (os.environ.get("MONGODB_DB") or MONGODB_DB or "chatbot").strip()
+        app.state.mongo = client[db_name]
+        print(f"[mongo] Connected to '{db_name}'.")
+    except Exception as e:
+        app.state.mongo = None
+        print(f"[mongo] Disabled. Could not connect: {e}")
+
+
+@app.on_event("shutdown")
+async def _shutdown_mongo():
+    """Close Mongo client on shutdown if present."""
+    mongo = getattr(app.state, "mongo", None)
+    if mongo is not None:
+        try:
+            client = mongo.client
+            client.close()
+        except Exception:
+            pass
 
 
 def small_talk_reply(company: str, text: str) -> Optional[str]:
@@ -86,7 +127,22 @@ async def ingest(company: str = Form(...), file: UploadFile = File(...), reset: 
 
 @app.post("/v1/chat")
 async def chat(req: ChatRequest):
-    # 0) Small-talk fast path
+    # 0) Optional: log prompt to MongoDB Atlas
+    mongo = getattr(app.state, "mongo", None)
+    if mongo is not None:
+        try:
+            coll_name = (os.environ.get("MONGODB_PROMPTS_COLLECTION") or MONGODB_PROMPTS_COLLECTION or "prompts").strip()
+            doc = {
+                "company": req.company,
+                "query": req.query,
+                "top_k": req.top_k,
+                "ts": datetime.utcnow().isoformat() + "Z",
+            }
+            await mongo[coll_name].insert_one(doc)
+        except Exception as e:
+            # Non-blocking: log and continue
+            print(f"[mongo] Insert failed: {e}")
+    # 1) Small-talk fast path
     st = small_talk_reply(req.company, req.query)
     if st:
         return JSONResponse({
@@ -96,11 +152,11 @@ async def chat(req: ChatRequest):
             "answer": st,
         })
 
-    # 1) Retrieve
+    # 2) Retrieve
     ix = CompanyIndex(req.company)
     results = ix.search(req.query, k=req.top_k or TOP_K)
 
-    # 2) Guardrail: if nothing relevant enough, don't answer
+    # 3) Guardrail: if nothing relevant enough, don't answer
     if not results or float(results[0][0]) < MIN_TOP_SCORE:
         answer = (
             "I'm not capable of answering this question with the current knowledge. "
@@ -114,7 +170,7 @@ async def chat(req: ChatRequest):
             # Do NOT include citations or hits to avoid showing ranked snippets
         })
 
-    # 3) Try different LLM options (Mistral first if configured, then Ollama)
+    # 4) Try different LLM options (Mistral first if configured, then Ollama)
     if USE_MISTRAL and mistral_available():
         can_answer, gen_answer = judge_and_answer_with_mistral(req.company, req.query, results)  # type: ignore
         if can_answer and gen_answer.strip():
@@ -146,3 +202,17 @@ async def chat(req: ChatRequest):
         "answer": answer,
         # No citations, no hits in response
     })
+
+
+@app.get("/v1/health/mongo")
+async def health_mongo():
+    """Return basic Mongo connectivity status and collection name used."""
+    mongo = getattr(app.state, "mongo", None)
+    if mongo is None:
+        return {"connected": False}
+    try:
+        await mongo.command("ping")
+        coll_name = (os.environ.get("MONGODB_PROMPTS_COLLECTION") or MONGODB_PROMPTS_COLLECTION or "prompts").strip()
+        return {"connected": True, "db": mongo.name, "collection": coll_name}
+    except Exception as e:
+        return {"connected": False, "error": str(e)}

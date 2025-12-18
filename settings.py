@@ -24,3 +24,12 @@ MISTRAL_API_KEY = "4O4QYaX9oKCM0DBoXBpXgo3tEdTuPLAV"  # prefer env var MISTRAL_A
 
 # Guardrail: if top retrieved cosine score is below this, treat as insufficient
 MIN_TOP_SCORE = 0.22  # tune 0.18–0.30 depending on your data
+
+# MongoDB Atlas (optional) — set via environment variables for safety
+# Example (PowerShell):
+#   $env:MONGODB_URI = "mongodb+srv://aymane:<Azertymn25pjq@@>@mern-blog.jk3yb.mongodb.net/"
+#   $env:MONGODB_DB = "projectprompts"
+#   $env:MONGODB_PROMPTS_COLLECTION = "prompts"
+MONGODB_URI = "mongodb+srv://aymane:<Azertymn25pjq@@>@mern-blog.jk3yb.mongodb.net/"
+MONGODB_DB = "projectprompts"
+MONGODB_PROMPTS_COLLECTION = "prompt"
